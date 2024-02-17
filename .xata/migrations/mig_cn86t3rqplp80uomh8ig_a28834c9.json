@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn86t3rqplp80uomh8ig",
+  "parentID": "mig_cn86s4rqplp80uomh8hg",
+  "checksum": "1:a28834c9e65c6e7ed5594319fbe569126496518d8b944d31dcf0df9dbe899cd5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "NFTname",
+          "type": "string"
+        },
+        "table": "MyNFTs"
+      }
+    }
+  ]
+}

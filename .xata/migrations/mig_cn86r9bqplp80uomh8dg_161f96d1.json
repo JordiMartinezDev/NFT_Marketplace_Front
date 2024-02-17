@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn86r9bqplp80uomh8dg",
+  "parentID": "mig_cn86qtjqplp80uomh8cg",
+  "checksum": "1:161f96d147a54029c7cf606899c178db0b6a77afa2d3ceb5cb9ae813c0d846a4",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "Collections"
+      }
+    }
+  ]
+}

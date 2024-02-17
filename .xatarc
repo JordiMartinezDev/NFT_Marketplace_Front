@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Jordi-Martinez-s-workspace-q847ds.eu-central-1.xata.sh/db/nft-marketplace-db",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
