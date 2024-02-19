@@ -5,7 +5,12 @@ interface FormProps {
   onSubmit: (formData: FormData) => void;
 }
 
-const CreateForm = ({ onSubmit }: FormProps) => {
+const onSubmit = (formData: FormData) => {
+  // Handle form submission here
+  console.log(formData);
+};
+
+const CreateForm = () => {
   const [formData, setFormData] = useState({} as FormData);
 
   const handleChange = (
@@ -60,7 +65,7 @@ const CreateForm = ({ onSubmit }: FormProps) => {
           Number of NFTs in the Collection
         </label>
         <input
-          type="number"
+          type="text"
           id="numNFTs"
           name="numNFTs"
           onChange={handleChange}
@@ -74,7 +79,6 @@ const CreateForm = ({ onSubmit }: FormProps) => {
           htmlFor="creatorFee"
           className="block text-gray-700 text-sm font-bold mb-2"
         >
-          {" "}
           Creator Fee in %
         </label>
         <input
