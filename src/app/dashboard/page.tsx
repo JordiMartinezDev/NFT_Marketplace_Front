@@ -1,16 +1,24 @@
 import { getXataClient } from "@/xata";
 import React from "react";
 import CreateCollectionForm from "./CreateCollectionForm";
+import { auth } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
 
 type Props = {};
 
 export default async function DashboardPage({}: Props) {
   const xataClient = getXataClient();
-  const folders = await xataClient.db.MyNFTs.getMany();
+  const { userId } = auth();
+  if (!userId) {
+    redirect("/");
+  }
+  const collections = await xataClient.db.CreatedCollections.filter({
+    userId,
+  }).getMany();
   return (
     <div>
-      {folders.map((folder) => (
-        <p key={folder.id}>{folder.NFTname}</p>
+      {collections.map((collection) => (
+        <p key={collection.id}>{collection.name}</p>
       ))}
       <CreateCollectionForm></CreateCollectionForm>
     </div>

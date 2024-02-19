@@ -1,6 +1,7 @@
 "use server";
 
 import { getXataClient } from "@/xata";
+import { auth } from "@clerk/nextjs";
 import { z } from "zod";
 
 const MAX_FILE_SIZE = 5000000;
@@ -15,6 +16,7 @@ const schema = z.object({
   total_NFTs: z.number().min(1),
   name: z.string().min(5),
   creator_fee: z.number(),
+  userId: z.string(),
   image: z
     .any()
     .refine((file) => file?.size <= MAX_FILE_SIZE, `Max image size is 5MB.`)
@@ -31,12 +33,15 @@ async function uploadToDB(formData: FormData) {
   const image = formData.get("image");
   const xataClient = getXataClient();
 
+  const { userId } = auth();
+
   const fileObject = { content: image };
   const parsedForm = schema.parse({
     total_NFTs: numNFTs,
     name: name,
     creator_fee: creatorFee,
     image: image,
+    userId: userId,
   });
 
   await xataClient.db.CreatedCollections.create(parsedForm);

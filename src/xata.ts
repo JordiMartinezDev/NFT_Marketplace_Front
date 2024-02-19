@@ -8,7 +8,16 @@ import type {
 
 const tables = [
   { name: "MyNFTs", columns: [{ name: "NFTname", type: "string" }] },
-  { name: "CreatedCollections", columns: [{ name: "name", type: "string" }] },
+  {
+    name: "CreatedCollections",
+    columns: [
+      { name: "total_NFTs", type: "int", notNull: true, defaultValue: "1" },
+      { name: "name", type: "text", notNull: true, defaultValue: "Collection" },
+      { name: "creator_fee", type: "float", notNull: true, defaultValue: "0" },
+      { name: "image", type: "file" },
+      { name: "userId", type: "string", notNull: true, defaultValue: "0" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
