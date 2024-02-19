@@ -1,6 +1,6 @@
 import { getXataClient } from "@/xata";
 import React from "react";
-import CreateForm from "./createForm";
+import CreateCollectionForm from "./CreateCollectionForm";
 
 type Props = {};
 
@@ -12,7 +12,7 @@ export default async function DashboardPage({}: Props) {
       {folders.map((folder) => (
         <p key={folder.id}>{folder.NFTname}</p>
       ))}
-      <CreateForm></CreateForm>
+      <CreateCollectionForm></CreateCollectionForm>
     </div>
   );
 }
