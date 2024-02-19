@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import uploadToDB from "./uploadToDB";
 
 interface FormProps {
   onSubmit: (formData: FormData) => void;
@@ -39,7 +40,7 @@ const CreateCollectionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+    <form className="max-w-md mx-auto" action={uploadToDB}>
       <div className="mb-4">
         <label
           htmlFor="collectionName"
