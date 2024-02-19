@@ -66,7 +66,7 @@ const CreateCollectionForm = () => {
           Number of NFTs in the Collection
         </label>
         <input
-          type="text"
+          type="number"
           id="numNFTs"
           name="numNFTs"
           onChange={handleChange}
@@ -84,6 +84,7 @@ const CreateCollectionForm = () => {
         </label>
         <input
           type="number"
+          step="0.1"
           id="creatorFee"
           name="creatorFee"
           onChange={handleChange}
