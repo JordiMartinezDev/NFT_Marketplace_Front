@@ -22,7 +22,7 @@ function NavBar() {
   if (isLoaded && user) {
     items.push({ href: "/dashboard", label: "Dashboard" });
   } else {
-    items.push({ href: "/sign-in", label: "Sign-in" });
+    items.push({ href: "/dashboard", label: "Sign-in" });
   }
 
   return (
@@ -47,9 +47,11 @@ function NavBar() {
                 {isLoaded && user && (
                   // <UserButton afterSignOutUrl="/"></UserButton>
                   <SignOutButton>
-                    <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                      Sign out
-                    </button>
+                    <Link href={"/marketplace"}>
+                      <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Sign out
+                      </button>
+                    </Link>
                   </SignOutButton>
                 )}
               </div>
