@@ -1,5 +1,5 @@
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_d2****ZXYk
-CLERK_SECRET_KEY=sk_test_cx****nVp5jq
+CLERK_SECRET_KEY=sk_test_cx****5jq
 
 XATA_HTTP_ENDPOINT=https://Jor****ata.sh/db/nf***ce-db:main
 XATA_API_KEY=xau_4uZw*****
@@ -9,3 +9,4 @@ NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+
