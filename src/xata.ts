@@ -52,6 +52,22 @@ let instance: XataClient | undefined = undefined;
 export const getXataClient = () => {
   if (instance) return instance;
 
-  instance = new XataClient();
+  instance = new XataClient({
+    enableBrowser: true,
+    apiKey: process.env.XATA_API_KEY,
+  });
   return instance;
 };
+
+// export const getXataClient = () => {
+//   // if (instance) return instance;
+//   // if (!instance) {
+//   const apiKey = process.env.XATA_API_KEY;
+
+//   instance = new XataClient({
+//     enableBrowser: true,
+//     apiKey: "xau_4uZYM6bg8jasgpozWQEWkhYZ7yvs50fw0",
+//   });
+//   return instance;
+//   // }
+// };
