@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnae86dopos5r8r1ehog",
+  "parentID": "mig_cnae7rdopos5r8r1ehng",
+  "checksum": "1:bc8431929d8c2a49198727b05685127cd1d70f395e3f5499f3951aff4379328f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "image_cid",
+          "type": "string"
+        },
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

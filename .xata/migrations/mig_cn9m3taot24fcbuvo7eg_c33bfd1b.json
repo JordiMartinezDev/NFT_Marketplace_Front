@@ -1,0 +1,18 @@
+{
+  "id": "mig_cn9m3taot24fcbuvo7eg",
+  "parentID": "mig_cn9hl4jv66ejn8pvumkg",
+  "checksum": "1:c33bfd1bd211d6f4c46c2a37b2f94cc91768eed3e69869729531ee62c7a19f50",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "userId",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

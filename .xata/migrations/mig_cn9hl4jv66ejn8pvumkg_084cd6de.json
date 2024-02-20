@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn9hl4jv66ejn8pvumkg",
+  "parentID": "mig_cn9hl2rv66ejn8pvumjg",
+  "checksum": "1:084cd6de1090c40ec550f62be465128b4721b23a52a25c8a1651c521b884e9dd",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "creator_fee",
+        "oldName": "Creator_fee",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

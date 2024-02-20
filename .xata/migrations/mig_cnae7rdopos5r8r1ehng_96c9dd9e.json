@@ -1,0 +1,13 @@
+{
+  "id": "mig_cnae7rdopos5r8r1ehng",
+  "parentID": "mig_cn9n757glt0q29p1f7i0",
+  "checksum": "1:96c9dd9ef15548380b7584f669ea9c65e8d98eb20bbab8ba4b11bed25fcbc86f",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "image",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

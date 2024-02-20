@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn9n757glt0q29p1f7i0",
+  "parentID": "mig_cn9n71fglt0q29p1f7h0",
+  "checksum": "1:1a955bac822e9fac04298c5f248bcb85253a07f256a2b95991e1aa4c87b5b57a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "file",
+          "file": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

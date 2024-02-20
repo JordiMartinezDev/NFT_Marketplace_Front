@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn9hl2rv66ejn8pvumjg",
+  "parentID": "mig_cn9hl1f51je9n413l8h0",
+  "checksum": "1:6f4f7631db5ba263b0abfbad6e15a15236cf43a5764e489c5fc81f2c716e94b3",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "image",
+        "oldName": "Image",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

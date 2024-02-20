@@ -10,3 +10,7 @@ export default authMiddleware({
     "/bar(.*)",
   ],
 });
+
+export const config = {
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+};

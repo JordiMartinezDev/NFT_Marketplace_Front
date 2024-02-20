@@ -1,0 +1,18 @@
+{
+  "id": "mig_cn9himmb8i0oovriqabg",
+  "parentID": "mig_cn9hihf51je9n413l8e0",
+  "checksum": "1:c13bbf24f8b7a45ff59105f4b5b9a68cc5403e799d1e5780c9bd2659249906e5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Collection_name",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "Collection"
+        },
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

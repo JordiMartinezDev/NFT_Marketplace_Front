@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn9hl1f51je9n413l8h0",
+  "parentID": "mig_cn9hjl6b8i0oovriqacg",
+  "checksum": "1:7c0ff1d13d9a47ed06ea70c955d97e0c906426ffa5db531b423230652c5713be",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "total_NFTs",
+        "oldName": "Total_NFTs",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import type {
   SchemaInference,
   XataRecord,
 } from "@xata.io/client";
-
+require("dotenv");
 const tables = [
   { name: "MyNFTs", columns: [{ name: "NFTname", type: "string" }] },
   {
@@ -14,8 +14,8 @@ const tables = [
       { name: "total_NFTs", type: "int", notNull: true, defaultValue: "1" },
       { name: "name", type: "text", notNull: true, defaultValue: "Collection" },
       { name: "creator_fee", type: "float", notNull: true, defaultValue: "0" },
-      { name: "image", type: "file" },
       { name: "userId", type: "string", notNull: true, defaultValue: "0" },
+      { name: "image_cid", type: "string" },
     ],
   },
 ] as const;
@@ -39,11 +39,19 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://Jordi-Martinez-s-workspace-q847ds.eu-central-1.xata.sh/db/nft-marketplace-db",
+  enableBrowser: true,
+  apiKey: process.env.XATA_API_KEY,
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
   constructor(options?: BaseClientOptions) {
-    super({ ...defaultOptions, ...options }, tables);
+    super(
+      {
+        ...defaultOptions,
+        ...options,
+      },
+      tables
+    );
   }
 }
 
@@ -52,22 +60,14 @@ let instance: XataClient | undefined = undefined;
 export const getXataClient = () => {
   if (instance) return instance;
 
+  const apiKey = process.env.XATA_API_KEY;
+  if (!apiKey) {
+    throw new Error("XATA_API_KEY environment variable is missing.");
+  }
+
   instance = new XataClient({
     enableBrowser: true,
-    apiKey: process.env.XATA_API_KEY,
+    apiKey: apiKey,
   });
   return instance;
 };
-
-// export const getXataClient = () => {
-//   // if (instance) return instance;
-//   // if (!instance) {
-//   const apiKey = process.env.XATA_API_KEY;
-
-//   instance = new XataClient({
-//     enableBrowser: true,
-//     apiKey: "xau_4uZYM6bg8jasgpozWQEWkhYZ7yvs50fw0",
-//   });
-//   return instance;
-//   // }
-// };
