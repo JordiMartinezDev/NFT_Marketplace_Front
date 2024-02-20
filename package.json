@@ -13,6 +13,7 @@
     "@xata.io/cli": "^0.15.8",
     "@xata.io/client": "^0.29.1",
     "dotenv": "^16.4.4",
+    "multer": "^1.4.5-lts.1",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",

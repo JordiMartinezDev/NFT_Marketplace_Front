@@ -52,6 +52,7 @@
 // Above code working without correct file upload
 
 // Following code with security concerns but seems not to have any errors
+
 "use server";
 import { getXataClient } from "@/xata";
 import { z } from "zod";
@@ -70,28 +71,25 @@ const schema = z.object({
   name: z.string().min(5),
   creator_fee: z.number(),
   userId: z.string(),
-  image: z
-    .object({
-      url: z.string(), // Store file URL in the database
-      fileId: z.string(), // Store file ID in the database
-    })
-    .nullable(), // Allow null if no image is uploaded
+  image: z.any(),
 });
 
 async function uploadToDB(formData: FormData) {
   const name = formData.get("collectionName");
   const numNFTs = Number(formData.get("numNFTs"));
   const creatorFee = Number(formData.get("creatorFee"));
-  const image = formData.get("image");
+  const image = formData.get("image") as File;
 
   const xataClient = getXataClient();
 
-  // Check if an image was uploaded
-  const fileObject = { content: image };
-
   const { userId } = auth();
 
-  // Construct the database record with image URL and file ID
+  const fileObject = {
+    name: name,
+    mediaType: image.type,
+    base64Content: "asfasf23r324fergfe43",
+  };
+
   const parsedForm = schema.parse({
     total_NFTs: numNFTs,
     name: name,
@@ -100,6 +98,7 @@ async function uploadToDB(formData: FormData) {
     image: fileObject,
   });
 
+  console.log("\nIMAGE: ", image);
   // Save the record to the database
   await xataClient.db.CreatedCollections.create(parsedForm);
 }
