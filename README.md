@@ -6,11 +6,18 @@ run "npm run dev"
 To update xata schemas run
 xata init
 
-Then, xata.ts will be created but we need to add a couple of things.
+Please note that xata.ts will be created.
+Make sure to have your .env file as detailed in the dotenv_example.txt with correct API keys for each platform
+
+If you get any error, please make add/change the xata.ts file as follows:
+
+// --------- CODE --------
+
+// ------ IMPORTS --------
 require("dotenv"); // to use process.env.XATA_API_KEY
+// ------ IMPORTS --------
 
-then we need to update the xata.ts code, api key and enable browse as parameters
-
+// ------ REPLACE AT THE END OF THE CODE -----
 let instance: XataClient | undefined = undefined;
 
 export const getXataClient = () => {
@@ -27,3 +34,7 @@ apiKey: apiKey,
 });
 return instance;
 };
+
+// ------ REPLACE AT THE END OF THE CODE -----
+
+// --------- CODE ----------
