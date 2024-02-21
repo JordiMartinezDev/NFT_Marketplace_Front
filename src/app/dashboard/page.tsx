@@ -1,6 +1,5 @@
 import { getXataClient } from "@/xata";
 import React from "react";
-import CreateCollectionForm from "./CreateCollectionForm";
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
@@ -20,7 +19,6 @@ export default async function DashboardPage({}: Props) {
       {collections.map((collection) => (
         <p key={collection.id}>{collection.name}</p>
       ))}
-      <CreateCollectionForm></CreateCollectionForm>
     </div>
   );
 }

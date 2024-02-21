@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import uploadToDB from "./uploadToDB";
+import uploadToDB from "../utils/uploadCollectionToDB";
 
 interface FormProps {
   onSubmit: (formData: FormData) => void;
