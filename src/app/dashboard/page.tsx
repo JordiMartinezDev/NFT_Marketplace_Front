@@ -17,13 +17,15 @@ export default async function DashboardPage({}: Props) {
     userId,
   }).getMany();
   return (
-    <div>
-      {collections.map((collection) => (
-        <CollectionCard
-          key={collection.id}
-          collection={collection}
-        ></CollectionCard>
-      ))}
+    <div className="container mx-auto px-4 py-8  max-w-4xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {collections.map((collection) => (
+          <CollectionCard
+            key={collection.id}
+            collection={collection}
+          ></CollectionCard>
+        ))}
+      </div>
     </div>
   );
 }

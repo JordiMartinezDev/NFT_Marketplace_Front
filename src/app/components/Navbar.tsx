@@ -26,7 +26,7 @@ function NavBar() {
   }
 
   return (
-    <nav className="bg-blue-800">
+    <nav className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -39,7 +39,7 @@ function NavBar() {
               <div className="flex space-x-4">
                 {items.map((item, index) => (
                   <Link key={index} href={item.href}>
-                    <div className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    <div className="text-white hover:bg-orange-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                       {item.label}
                     </div>
                   </Link>
@@ -48,7 +48,7 @@ function NavBar() {
                   // <UserButton afterSignOutUrl="/"></UserButton>
                   <SignOutButton>
                     <Link href={"/marketplace"}>
-                      <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                      <button className="text-white hover:bg-orange-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         Sign out
                       </button>
                     </Link>
