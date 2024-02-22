@@ -5,16 +5,15 @@ import Link from "next/link";
 type Props = {};
 
 function page({}: Props) {
-  return (
-    <div>
-      <div>
-        <Link href={"/createCollection"}> Create Collection</Link>
-      </div>
-      <div>
-        <Link href={"/createNFTs"}> Create NFT</Link>
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default page;
+// <div>
+//   <div>
+//     <Link href={"/createCollection"}> Create Collection</Link>
+//   </div>
+//   <div>
+//     <Link href={"/createNFTs"}> Create NFT</Link>
+//   </div>
+// </div>
