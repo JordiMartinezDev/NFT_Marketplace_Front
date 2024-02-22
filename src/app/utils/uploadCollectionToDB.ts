@@ -1,4 +1,3 @@
-
 "use server";
 import { getXataClient } from "@/xata";
 import { z } from "zod";
@@ -19,16 +18,20 @@ const schema = z.object({
   name: z.string().min(5),
   creator_fee: z.number(),
   userId: z.string(),
-  image_cid: z.string(), // Adjusted property name to match the variable name
+  image_cid: z.string(),
+  minting_price: z.number(),
+  description: z.string(), // Adjusted property name to match the variable name
 });
 
 async function uploadToDB(formData: FormData) {
   const nftStorageKey = process.env.NFT_STORAGE_KEY as string;
 
-  const name = formData.get("collectionName");
+  const name = formData.get("name");
   const numNFTs = Number(formData.get("numNFTs"));
   const creatorFee = Number(formData.get("creatorFee"));
   const image = formData.get("image") as File;
+  const description = formData.get("description");
+  const price = Number(formData.get("mintingPrice"));
   const xataClient = getXataClient();
 
   const { userId } = auth();
@@ -43,7 +46,9 @@ async function uploadToDB(formData: FormData) {
     name: name,
     creator_fee: creatorFee,
     userId: userId,
-    image_cid: imageCid, // Use the image CID here
+    image_cid: imageCid,
+    description: description,
+    minting_price: price, // Use the image CID here
   });
 
   // Save the record to the database

@@ -5,7 +5,7 @@ import type {
   SchemaInference,
   XataRecord,
 } from "@xata.io/client";
-require("dotenv");
+
 const tables = [
   { name: "MyNFTs", columns: [{ name: "NFTname", type: "string" }] },
   {
@@ -16,6 +16,18 @@ const tables = [
       { name: "creator_fee", type: "float", notNull: true, defaultValue: "0" },
       { name: "userId", type: "string", notNull: true, defaultValue: "0" },
       { name: "image_cid", type: "string" },
+      {
+        name: "minting_price",
+        type: "float",
+        notNull: true,
+        defaultValue: "0",
+      },
+      {
+        name: "description",
+        type: "string",
+        notNull: true,
+        defaultValue: "description",
+      },
     ],
   },
 ] as const;
@@ -39,19 +51,11 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://Jordi-Martinez-s-workspace-q847ds.eu-central-1.xata.sh/db/nft-marketplace-db",
-  enableBrowser: true,
-  apiKey: process.env.XATA_API_KEY,
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
   constructor(options?: BaseClientOptions) {
-    super(
-      {
-        ...defaultOptions,
-        ...options,
-      },
-      tables
-    );
+    super({ ...defaultOptions, ...options }, tables);
   }
 }
 

@@ -1,0 +1,13 @@
+{
+  "id": "mig_cnbj53lc7rk24lr2f9r0",
+  "parentID": "mig_cnbj514kahlni8tcbmv0",
+  "checksum": "1:4848672ca03e03f10a5034fa916e650a535bfd9ece4133e74bda311b720e81c2",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "desk",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

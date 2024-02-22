@@ -58,6 +58,7 @@ const CreateCollectionForm = () => {
           required
         />
       </div>
+
       <div className="mb-4">
         <label
           htmlFor="description"
@@ -92,6 +93,7 @@ const CreateCollectionForm = () => {
           required
         />
       </div>
+
       <div className="mb-4">
         <label
           htmlFor="creatorFee"
@@ -115,7 +117,7 @@ const CreateCollectionForm = () => {
           htmlFor="Minting price"
           className="block text-gray-700 text-sm font-bold mb-2"
         >
-          Minting price in $USD
+          NFT minting price in $USD
         </label>
         <input
           type="number"

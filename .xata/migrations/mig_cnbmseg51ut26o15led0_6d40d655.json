@@ -1,0 +1,18 @@
+{
+  "id": "mig_cnbmseg51ut26o15led0",
+  "parentID": "mig_cnbms8o51ut26o15lec0",
+  "checksum": "1:6d40d655a3e3d56b73e033d8324f2d08a54a816321d4f8428ea7e4cdd695158f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "description",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "description"
+        },
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}

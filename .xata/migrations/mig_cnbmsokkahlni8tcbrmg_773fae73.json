@@ -1,0 +1,13 @@
+{
+  "id": "mig_cnbmsokkahlni8tcbrmg",
+  "parentID": "mig_cnbmslskahlni8tcbrlg",
+  "checksum": "1:773fae73c015d2574ae4fce1fc91275589ca2349622742b391a0ffe52c3d077a",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "text",
+        "table": "CreatedCollections"
+      }
+    }
+  ]
+}
