@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 type Props = {};
 
-export default async function DashboardPage({}: Props) {
+export default async function CreateCollectionPage({}: Props) {
   return (
     <div>
       <CreateCollectionForm></CreateCollectionForm>

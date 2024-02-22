@@ -7,7 +7,12 @@ type Props = {};
 function page({}: Props) {
   return (
     <div>
-      <Link href={"/createCollection"}> Create Collection</Link>
+      <div>
+        <Link href={"/createCollection"}> Create Collection</Link>
+      </div>
+      <div>
+        <Link href={"/createNFTs"}> Create NFT</Link>
+      </div>
     </div>
   );
 }
