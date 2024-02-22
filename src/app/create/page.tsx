@@ -1,5 +1,5 @@
 import React from "react";
-import CreateCollectionForm from "../components/CreateCollectionForm";
+import CreateCollectionForm from "../components/CollectionForm";
 import Link from "next/link";
 
 type Props = {};

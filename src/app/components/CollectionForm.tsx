@@ -11,7 +11,7 @@ const onSubmit = (formData: FormData) => {
   console.log(formData);
 };
 
-const CreateCollectionForm = () => {
+const CollectionForm = () => {
   const [formData, setFormData] = useState({} as FormData);
 
   const handleChange = (
@@ -159,4 +159,4 @@ const CreateCollectionForm = () => {
   );
 };
 
-export default CreateCollectionForm;
+export default CollectionForm;

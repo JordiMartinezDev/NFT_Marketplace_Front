@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import CollectionCard from "../components/CollectionCard";
+import CardContainer from "../components/CardContainer";
 
 type Props = {};
 
@@ -17,15 +18,13 @@ export default async function DashboardPage({}: Props) {
     userId,
   }).getMany();
   return (
-    <div className="container mx-auto px-4 py-8  max-w-4xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {collections.map((collection) => (
-          <CollectionCard
-            key={collection.id}
-            collection={collection}
-          ></CollectionCard>
-        ))}
-      </div>
-    </div>
+    <CardContainer>
+      {collections.map((collection) => (
+        <CollectionCard
+          key={collection.id}
+          collection={collection}
+        ></CollectionCard>
+      ))}
+    </CardContainer>
   );
 }

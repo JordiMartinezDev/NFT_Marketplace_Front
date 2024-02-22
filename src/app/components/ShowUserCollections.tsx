@@ -6,6 +6,7 @@ import Image from "next/image";
 import CollectionCard from "../components/CollectionCard";
 import NFTCard from "../components/NFTCard";
 import FeaturedCollection from "../components/FeaturedCollection";
+import CardContainer from "./CardContainer";
 type Props = {
   createNewCollectionCard: boolean;
 };
@@ -24,17 +25,15 @@ export default async function ShowUserCollections({
 
   return (
     <div>
-      <div className="container mx-auto py-8  max-w-7xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {createNewCollectionCard ? <CollectionCard></CollectionCard> : null}
-          {collections.map((collection) => (
-            <CollectionCard
-              key={collection.id}
-              collection={collection}
-            ></CollectionCard>
-          ))}
-        </div>
-      </div>
+      <CardContainer>
+        {createNewCollectionCard ? <CollectionCard></CollectionCard> : null}
+        {collections.map((collection) => (
+          <CollectionCard
+            key={collection.id}
+            collection={collection}
+          ></CollectionCard>
+        ))}
+      </CardContainer>
     </div>
   );
 }
