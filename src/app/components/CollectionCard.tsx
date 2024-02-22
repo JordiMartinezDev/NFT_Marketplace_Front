@@ -9,7 +9,8 @@ const CollectionCard = ({ collection }: Props) => {
   if (!collection) {
     // If collection prop is not provided, show a card to create a new NFT
     return (
-      <div className="bg-gray-100 rounded-lg shadow-md transition-transform transform hover:-translate-y-1 hover:scale-105 hover:bg-gray-200 cursor-pointer">
+      <div className="bg-gray-100 rounded-lg shadow-md transition-transform transform hover:-translate-y-1 hover:scale-105 hover:bg-gray-200 cursor-pointer hover:contrast-125 hover:shadow2xl">
+        {/* Add hover:contrast-125 hover:shadow-2xl */}
         <div className="flex justify-center p-4">
           <p className="text-gray-800 text-xl font-semibold text-center">
             Create New NFT
