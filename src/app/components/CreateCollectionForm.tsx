@@ -43,18 +43,35 @@ const CreateCollectionForm = () => {
     <form className="max-w-md mx-auto" action={uploadToDB}>
       <div className="mb-4">
         <label
-          htmlFor="collectionName"
+          htmlFor="name"
           className="block text-gray-700 text-sm font-bold mb-2"
         >
-          Collection Name
+          Collection's Name
         </label>
         <input
           type="text"
-          id="collectionName"
-          name="collectionName"
+          id="name"
+          name="name"
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Enter collection's name"
+          placeholder="Name"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="description"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Description
+        </label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Description"
           required
         />
       </div>
@@ -71,7 +88,7 @@ const CreateCollectionForm = () => {
           name="numNFTs"
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Enter number of NFTs"
+          placeholder="number of NFTs"
           required
         />
       </div>
@@ -80,7 +97,7 @@ const CreateCollectionForm = () => {
           htmlFor="creatorFee"
           className="block text-gray-700 text-sm font-bold mb-2"
         >
-          Creator Fee in %
+          Creator's Fee in %
         </label>
         <input
           type="number"
@@ -90,6 +107,24 @@ const CreateCollectionForm = () => {
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Enter creator's fee in %"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="Minting price"
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          Minting price in $USD
+        </label>
+        <input
+          type="number"
+          step="0.01"
+          id="mintingPrice"
+          name="mintingPrice"
+          onChange={handleChange}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Price"
           required
         />
       </div>
@@ -113,9 +148,9 @@ const CreateCollectionForm = () => {
       <div className="flex items-center justify-center">
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
         >
-          Submit
+          Create collection
         </button>
       </div>
     </form>
