@@ -19,17 +19,16 @@ export default async function Marketplace({}: Props) {
   }).getMany();
 
   const imageUrl =
-    "https://bafybeiar6p52sbxvkcv5zne4pqmepjuv5xuwmdwu5o42pezb2jv5pxhlmu.ipfs.nftstorage.link/";
+    "https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8MTYlM0E5fGVufDB8fDB8fHww";
   return (
     <div>
       <FeaturedCollection imageUrl={imageUrl}></FeaturedCollection>
-      <div className="container mx-auto px-4 py-8  max-w-4xl">
+      <div className="container mx-auto py-8  max-w-7xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {collections.map((collection) => (
             <NFTCard key={collection.id} collection={collection}></NFTCard>
           ))}
         </div>
-        F
       </div>
     </div>
   );
