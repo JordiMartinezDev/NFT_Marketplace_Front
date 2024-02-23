@@ -21,7 +21,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <Navbar />
-          <div className="min-h-screen flex justify-center items-center p-24 bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
+          <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
             {children}
           </div>
         </body>

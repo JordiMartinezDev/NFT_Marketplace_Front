@@ -6,9 +6,5 @@ export default function Home() {
   const { userId } = auth();
   if (userId) redirect("/marketplace");
 
-  return (
-    <main className="">
-      <div>Hello world</div>
-    </main>
-  );
+  return <main className=""></main>;
 }
