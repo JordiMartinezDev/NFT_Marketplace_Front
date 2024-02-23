@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Navbar2 from "./components/Navbar2";
+
 import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +22,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <Navbar />
+          <Navbar2 />
           <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
             {children}
           </div>
