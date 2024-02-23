@@ -12,6 +12,7 @@ interface NavItem {
   label: string;
 }
 
+// Tailwind styles to improve the readability of the component
 const style = {
   wrapper: `bg-[#04111d] w-screen px-[1.2rem] py-[0.8rem] flex justify-between`,
   logoContainer: `flex items-center cursor-pointer rounded-2xl pr-4`,
@@ -64,6 +65,7 @@ const Navbar2 = () => {
         </div>
       </div>
       <div className={style.headerItems}>
+        {/* Mapping Navbbar items */}
         {items.map((item, index) => (
           <Link key={index} href={item.href}>
             <div className={style.headerItem}>{item.label}</div>
