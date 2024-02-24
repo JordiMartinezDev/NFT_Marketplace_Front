@@ -1,4 +1,7 @@
 export default function CollectionId({ params }: any) {
-  const collectionParams = params;
-  return <div>CollectionId Any: {collectionParams.collectionId}</div>;
+  return (
+    <div>
+      <h1>{params.collectionId}</h1>
+    </div>
+  );
 }
