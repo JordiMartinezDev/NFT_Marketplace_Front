@@ -71,8 +71,11 @@ const Navbar2 = () => {
             <div className={style.headerItem}>{item.label}</div>
           </Link>
         ))}
+
         <div className={style.headerIcon}>
-          <CgProfile />
+          <Link href="/profile/">
+            <CgProfile />
+          </Link>
         </div>
         <div className={style.headerIcon}>
           <MdOutlineAccountBalanceWallet />
