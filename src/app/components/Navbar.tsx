@@ -1,7 +1,10 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineAccountBalanceWallet } from "react-icons/md";
 import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 
 interface NavItem {
@@ -9,7 +12,22 @@ interface NavItem {
   label: string;
 }
 
-function NavBar() {
+// Tailwind styles to improve the readability of the component
+const style = {
+  wrapper: `bg-[#04111d] w-screen px-[1.2rem] py-[0.8rem] flex justify-between`,
+  logoContainer: `flex items-center cursor-pointer rounded-2xl pr-4`,
+  logoText: ` ml-[0.8rem] text-white font-semibold text-2xl`,
+  logoSearchbarWrapper:
+    "bg-[#04111d] w-1/3 px-[1.2rem] py-[0.2rem] flex justify-start ",
+  searchBar: `flex mx-[0.8rem] mx-[0.8rem] flex-1 items-center bg-[#363840] rounded-[0.8rem] hover:bg-[#4c505c] `,
+  searchIcon: `text-[#8a939b] mx-3 font-bold text-lg`,
+  searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-[#e6e8eb] placeholder:text-[#8a939b]`,
+  headerItems: ` flex items-center justify-end`,
+  headerItem: `text-white px-4 font-bold text-[#c8cacd] hover:text-white cursor-pointer rounded-2xl`,
+  headerIcon: `text-[#8a939b] text-3xl font-black px-4 hover:text-white cursor-pointer rounded-2xl `,
+};
+
+const Navbar = () => {
   const { user, isLoaded } = useUser();
 
   const items: NavItem[] = [
@@ -26,41 +44,47 @@ function NavBar() {
   }
 
   return (
-    <nav className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <div className="text-white text-xl font-bold">Your App Name</div>
-            </Link>
+    <div className={style.wrapper}>
+      <div className={style.logoSearchbarWrapper}>
+        <Link href="/">
+          <div className={style.logoContainer}>
+            <Image
+              src="/png/PatonProfileNFT.png"
+              height={40}
+              width={40}
+              alt="logo"
+            />
+            <div className={style.logoText}>BTokenized</div>
           </div>
-          <div className="flex">
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
-                {items.map((item, index) => (
-                  <Link key={index} href={item.href}>
-                    <div className="text-white hover:bg-orange-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                      {item.label}
-                    </div>
-                  </Link>
-                ))}
-                {isLoaded && user && (
-                  // <UserButton afterSignOutUrl="/"></UserButton>
-                  <SignOutButton>
-                    <Link href={"/marketplace"}>
-                      <button className="text-white hover:bg-orange-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        Sign out
-                      </button>
-                    </Link>
-                  </SignOutButton>
-                )}
-              </div>
-            </div>
+        </Link>
+        <div className={style.searchBar}>
+          <div className={style.searchIcon}>
+            <AiOutlineSearch />
           </div>
+          <input className={style.searchInput} placeholder="Search..." />
         </div>
       </div>
-    </nav>
-  );
-}
+      <div className={style.headerItems}>
+        {/* Mapping Navbbar items */}
+        {items.map((item, index) => (
+          <Link key={index} href={item.href}>
+            <div className={style.headerItem}>{item.label}</div>
+          </Link>
+        ))}
 
-export default NavBar;
+        <div className={style.headerIcon}>
+          <Link href="/profile/">
+            <CgProfile />
+          </Link>
+        </div>
+        <div className={style.headerIcon}>
+          <Link href="userAssets">
+            <MdOutlineAccountBalanceWallet />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

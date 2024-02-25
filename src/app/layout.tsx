@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Navbar2 from "./components/Navbar2";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -22,8 +21,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <Navbar2 />
-          <div className="min-h-screen flex justify-center items-center bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200">
+          <Navbar />
+          <div className="min-h-screen flex justify-center items-center bg-white">
+            {/* bg-gradient-to-r from-[#16181a] via-[#1e2325] to-[#16181a] */}
             {children}
           </div>
         </body>

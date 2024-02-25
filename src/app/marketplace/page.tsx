@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import CollectionCard from "../components/CollectionCard";
-import FeaturedBanner from "../components/FeaturedCollection";
+import FeaturedCollection from "../components/FeaturedCollection";
 import CardContainer from "../components/CardContainer";
 type Props = {};
 
@@ -22,7 +22,7 @@ export default async function Marketplace({}: Props) {
     "https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8MTYlM0E5fGVufDB8fDB8fHww";
   return (
     <div>
-      <FeaturedBanner></FeaturedBanner>
+      <FeaturedCollection imageUrl={imageUrl}></FeaturedCollection>
       <CardContainer>
         {collections.map((collection) => (
           <CollectionCard
