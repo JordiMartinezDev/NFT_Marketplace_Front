@@ -29,7 +29,7 @@ function Create({}: Props) {
             <Image
               width={400}
               height={400}
-              src="/jpg/collection1.jpg"
+              src="/png/multiple_apes.png"
               alt="image"
             ></Image>
           </CardContent>
@@ -43,13 +43,13 @@ function Create({}: Props) {
         <Card>
           <CardHeader>
             <CardTitle>Create NFT</CardTitle>
-            <CardDescription>Launch your NFT collection</CardDescription>
+            <CardDescription>Create an NFT for your collection</CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4">
             <Image
               width={400}
               height={400}
-              src="/jpg/ape1.jpg"
+              src="/png/1_squared.png"
               alt="image"
             ></Image>
           </CardContent>

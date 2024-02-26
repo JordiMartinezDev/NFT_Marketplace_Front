@@ -19,7 +19,7 @@ const createNFTs = async (props: Props) => {
   }).getMany();
   return (
     <div>
-      <ShowUserCollections createNewCollectionCard={true}></ShowUserCollections>
+      <ShowUserCollections></ShowUserCollections>
     </div>
   );
 };

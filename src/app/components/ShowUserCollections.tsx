@@ -4,16 +4,14 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import CollectionCard from "../components/CollectionCard";
-import NFTCard from "../components/NFTCard";
-import FeaturedCollection from "../components/FeaturedCollection";
-import CardContainer from "./CardContainer";
-type Props = {
-  createNewCollectionCard: boolean;
-};
+import CollectionCard2 from "../components/CollectionCard2";
 
-export default async function ShowUserCollections({
-  createNewCollectionCard,
-}: Props) {
+import NFTCard from "../components/NFTCard";
+import CardContainer from "./CardContainer";
+import CardCreateNewCollection from "./CardCreateNewCollection";
+type Props = {};
+
+export default async function ShowUserCollections({}: Props) {
   const xataClient = getXataClient();
   const { userId } = auth();
   if (!userId) {
@@ -24,16 +22,14 @@ export default async function ShowUserCollections({
   }).getMany();
 
   return (
-    <div>
-      <CardContainer>
-        {createNewCollectionCard ? <CollectionCard></CollectionCard> : null}
-        {collections.map((collection) => (
-          <CollectionCard
-            key={collection.id}
-            collection={collection}
-          ></CollectionCard>
-        ))}
-      </CardContainer>
-    </div>
+    <CardContainer>
+      <CardCreateNewCollection></CardCreateNewCollection>
+      {collections.map((collection) => (
+        <CollectionCard2
+          key={collection.id}
+          collection={collection}
+        ></CollectionCard2>
+      ))}
+    </CardContainer>
   );
 }
