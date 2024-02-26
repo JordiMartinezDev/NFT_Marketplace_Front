@@ -26,24 +26,19 @@ export default async function FeaturedCarousel(props: Props) {
 
   return (
     // 50% on small screens and 33% on larger screens.
-
     <Carousel
       opts={{
         align: "start",
+        loop: true,
       }}
-      className="w-full max-w-lg"
+      className="w-full  mx-auto"
     >
       <CarouselContent>
         {collections.map((collection) => (
-          <CarouselItem
-            key={collection.id}
-            className="md:basis-1/2 lg:basis-1/3"
-          >
+          <CarouselItem key={collection.id} className="rounded-lg w-1/4">
             <CollectionCard collection={collection}></CollectionCard>
           </CarouselItem>
         ))}
-        <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
-        <CarouselItem className="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
