@@ -19,10 +19,10 @@ type Props = {
 
 function CollectionCard2({ collection }: Props) {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] ">
       <CardHeader>
         <CardTitle>{collection.name}</CardTitle>
-        <CardDescription>{collection.description}</CardDescription>
+        <CardDescription>Collection</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex mb-2 justify-center">
