@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import CardContainer from "../components/CardContainer";
 import FeaturedCarousel from "../components/FeaturedCarousel";
+import { Separator } from "@/components/ui/separator";
 type Props = {};
 
 export default async function Marketplace({}: Props) {
@@ -22,15 +23,19 @@ export default async function Marketplace({}: Props) {
   }).getMany();
 
   return (
-    <div className="container">
+    <div className="container justify-center gap-4">
       <div className="container mx-auto py-8  max-w-7xl ">
         <FeaturedCarousel />
       </div>
+      <div className="flex justify-center">
+        <h2>Upcoming collections</h2>
+      </div>
+      <Separator />
       <CardContainer>
         {collections.map((collection) => (
           <CardContent
             key={collection.id}
-            className="flex aspect-square items-center justify-center p-6 w-[350px] "
+            className="flex flex-grow aspect-square items-center justify-center p-6 w-[350px] "
           >
             <CollectionCard2
               key={collection.id}
