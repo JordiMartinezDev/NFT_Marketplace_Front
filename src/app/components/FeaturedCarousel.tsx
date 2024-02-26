@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CollectionCard from "./CollectionCard";
+import CardContainer from "./CardContainer";
 
 type Props = {};
 
@@ -29,14 +30,18 @@ export default async function FeaturedCarousel(props: Props) {
     <Carousel
       opts={{
         align: "start",
-        loop: true,
       }}
-      className="w-full  mx-auto"
+      className=""
     >
       <CarouselContent>
         {collections.map((collection) => (
-          <CarouselItem key={collection.id} className="rounded-lg w-1/4">
-            <CollectionCard collection={collection}></CollectionCard>
+          <CarouselItem
+            key={collection.id}
+            className="md:basis-1/2 lg:basis-1/3"
+          >
+            <CardContent className="flex aspect-square items-center justify-center p-6">
+              <CollectionCard collection={collection}></CollectionCard>
+            </CardContent>
           </CarouselItem>
         ))}
       </CarouselContent>

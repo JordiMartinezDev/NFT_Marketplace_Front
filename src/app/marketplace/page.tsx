@@ -20,10 +20,9 @@ export default async function Marketplace({}: Props) {
 
   return (
     <div>
-      <CardContainer>
+      <div className="container mx-auto py-8 max-w-7xl ">
         <FeaturedCarousel />
-      </CardContainer>
-
+      </div>
       <CardContainer>
         {collections.map((collection) => (
           <CollectionCard
