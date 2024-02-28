@@ -4,6 +4,8 @@ import { auth, clerkClient } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import CollectionCard from "../components/CollectionCard";
+import CollectionCard2 from "../components/CollectionCard2";
+
 import CardContainer from "../components/CardContainer";
 
 type Props = {
@@ -22,16 +24,18 @@ export default async function DashboardPage({}: Props) {
     userId,
   }).getMany();
   return (
-    <div>
-      <h1>{user ? "" + user.username : ""}</h1>
-      <CardContainer>
-        {collections.map((collection) => (
-          <CollectionCard
-            key={collection.id}
-            collection={collection}
-          ></CollectionCard>
-        ))}
-      </CardContainer>
+    <div className="container justify-center gap-4">
+      <div className="container mx-auto py-8  max-w-7xl ">
+        <h1>{user ? "" + user.username : ""}</h1>
+        <CardContainer>
+          {collections.map((collection) => (
+            <CollectionCard2
+              key={collection.id}
+              collection={collection}
+            ></CollectionCard2>
+          ))}
+        </CardContainer>
+      </div>
     </div>
   );
 }
