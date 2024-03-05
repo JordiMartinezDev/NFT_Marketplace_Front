@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import CreateCollectionForm from "./CollectionForm";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,11 +19,48 @@ import { BrowserProvider, parseUnits } from "ethers";
 type Props = {};
 
 const AssetsCardCrypto = () => {
-  const [wallet, setWallet] = useState(null) as any;
+  const [wallet, setWallet] = useState() as any;
+  const [balance, setBalance] = useState() as any;
+  const [network, setNetwork] = useState() as any;
+
+  useEffect(() => {
+    const fetchWalletAddress = async () => {
+      try {
+        if (window.ethereum) {
+          const provider = new ethers.BrowserProvider(window.ethereum);
+          const signer = provider.getSigner();
+          const address = (await signer).getAddress();
+          var tempbalance: any = await provider.getBalance(address);
+          tempbalance = ethers.formatUnits(tempbalance, 18);
+
+          const network = await provider.getNetwork();
+
+          console.log("Network:", network.name);
+          console.log("ChainId:", network.chainId);
+
+          setNetwork(network.name);
+          setBalance(tempbalance);
+          setWallet(address);
+        } else {
+          console.log("MetaMask not installed; using read-only defaults");
+        }
+      } catch (error) {
+        console.error("Error getting address:", error);
+      }
+    };
+    fetchWalletAddress();
+  }, []);
 
   async function connectWallet() {
-    const provider = await new ethers.BrowserProvider(window.ethereum);
-    setWallet(provider);
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = provider.getSigner();
+      const address = (await signer).getAddress();
+      console.log("Wallet address:", address);
+      setWallet(address);
+    } catch (error) {
+      console.error("Error connecting wallet:", error);
+    }
   }
   return (
     <div className="flex justify-items-center">
@@ -33,7 +71,12 @@ const AssetsCardCrypto = () => {
         </CardHeader>
         <CardContent className="grid gap-4">
           {wallet ? (
-            <h2 className="text-lg font-semibold mb-2">0 $</h2>
+            <div>
+              <h2 className="text-lg font-semibold mb-2">0 $</h2>
+              <p> address: {wallet}</p>
+              <p> balance: {balance} ETH</p>
+              <p> network: {network}</p>
+            </div>
           ) : (
             <Button className="w-full" onClick={connectWallet}>
               Connect Wallet
