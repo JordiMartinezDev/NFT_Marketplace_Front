@@ -13,15 +13,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import AssetsCard from "../components/AssetsCardFiat";
+import AssetsCardFiat from "../components/AssetsCardFiat";
 import AssetsCardCrypto from "../components/AssetsCardCrypto";
 type Props = {};
 
 const UserAssets = () => {
   return (
-    <div className="flex gap-9">
-      <AssetsCard></AssetsCard>
-      <AssetsCardCrypto></AssetsCardCrypto>
+    <div className="flex justify-center gap-2 ">
+      <div className="flex-1">
+        <AssetsCardFiat />
+      </div>
+      <div className="flex-1">
+        <AssetsCardCrypto />
+      </div>
     </div>
   );
 };

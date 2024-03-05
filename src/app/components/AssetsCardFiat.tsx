@@ -18,8 +18,8 @@ type Props = {};
 
 const AssetsCardFiat = () => {
   return (
-    <div className="flex gap-4 ">
-      <Card>
+    <div className="flex gap-4 w-full h-full">
+      <Card className="w-full h-full">
         <CardHeader>
           <CardTitle>Balance</CardTitle>
           <CardDescription>Your current USD Balance</CardDescription>
@@ -29,7 +29,7 @@ const AssetsCardFiat = () => {
         </CardContent>
 
         <CardFooter>
-          <div className="flex justify-between gap-4">
+          <div className="flex justify-between gap-4 ">
             <Button className="w-full">Add funds</Button>
             <Button className="w-full ">Withdraw</Button>
           </div>

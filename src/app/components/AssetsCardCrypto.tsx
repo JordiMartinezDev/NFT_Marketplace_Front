@@ -72,7 +72,7 @@ const AssetsCardCrypto = () => {
         <CardContent className="grid gap-4">
           {wallet ? (
             <div>
-              <h2 className="text-lg font-semibold mb-2">0 $</h2>
+              <h2 className="text-lg font-semibold mb-2">Wallet</h2>
               <p> address: {wallet}</p>
               <p> balance: {balance} ETH</p>
               <p> network: {network}</p>
@@ -84,9 +84,9 @@ const AssetsCardCrypto = () => {
           )}
         </CardContent>
 
-        <CardFooter>
+        <CardFooter className="">
           {wallet ? (
-            <div className="flex justify-between gap-4">
+            <div className="flex justify-between gap-4 w-full">
               <Button className="w-full">Add funds</Button>
               <Button className="w-full ">Withdraw</Button>
             </div>
