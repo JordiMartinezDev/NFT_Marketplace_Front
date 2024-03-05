@@ -32,6 +32,7 @@ const CardCreateNewCollection = (props: Props) => {
               alt="image"
             ></Image>
           </CardContent>
+
           <CardFooter>
             <Button className="w-full">Create Collection</Button>
           </CardFooter>
