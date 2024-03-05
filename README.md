@@ -6,6 +6,9 @@ The project is meant to be used without any Blockchain knowledge, so expect some
 
 ### - Using Ethers.js on userAssets page ( wallet icon on the Navbar )
 
+To check the code of the Ethers js implementation ( v6 ) please take a look at the component AssetsCardCrypto.tsx
+To test the functionalities navigate using the Navbar to the Wallet icon
+
 ### - There are wallet interactions using Ethers.js library -
 
 We will be using SEPOLIA Testnet, please make sure to request faucet to interact with the contract
