@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CreateCollectionForm from "./CollectionForm";
 import Link from "next/link";
@@ -18,20 +19,22 @@ type Props = {};
 const AssetsCardFiat = () => {
   return (
     <div className="flex gap-4 ">
-      <Link href="createCollection">
-        <Card>
-          <CardHeader>
-            <CardTitle>Balance</CardTitle>
-            <CardDescription>Your current USD Balance</CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-4"></CardContent>
+      <Card>
+        <CardHeader>
+          <CardTitle>Balance</CardTitle>
+          <CardDescription>Your current USD Balance</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4">
+          <h2 className="text-lg font-semibold mb-2">0 $</h2>
+        </CardContent>
 
-          <CardFooter>
-            <Button className="w-full mx-2">Add funds</Button>
+        <CardFooter>
+          <div className="flex justify-between gap-4">
+            <Button className="w-full">Add funds</Button>
             <Button className="w-full ">Withdraw</Button>
-          </CardFooter>
-        </Card>
-      </Link>
+          </div>
+        </CardFooter>
+      </Card>
     </div>
   );
 };
