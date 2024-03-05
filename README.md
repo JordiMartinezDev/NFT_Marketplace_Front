@@ -4,6 +4,8 @@ This is the web3 NFT Marketplace frontend application.
 
 The project is meant to be used without any Blockchain knowledge, so expect some web2 behaviour ( such as common email/pw login)
 
+### - Using Ethers.js on userAssets page ( wallet icon on the Navbar )
+
 ### - There are wallet interactions using Ethers.js library -
 
 We will be using SEPOLIA Testnet, please make sure to request faucet to interact with the contract
