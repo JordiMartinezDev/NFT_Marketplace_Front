@@ -6,6 +6,11 @@ The project is meant to be used without any Blockchain knowledge, so expect some
 
 ### - There are wallet interactions using Ethers.js library -
 
+We will be using SEPOLIA Testnet, please make sure to request faucet to interact with the contract
+https://www.alchemy.com/faucets/ethereum-sepolia
+
+https://www.alchemy.com/faucets/polygon-mumbai
+
 ## Installation
 
 - **Clone the repository**
