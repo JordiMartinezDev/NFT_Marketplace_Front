@@ -14,13 +14,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ethers } from "ethers";
+import { BrowserProvider, parseUnits } from "ethers";
 type Props = {};
 
 const AssetsCardCrypto = () => {
-  const [wallet, setWallet] = useState(null);
+  const [wallet, setWallet] = useState(null) as any;
 
   async function connectWallet() {
     const provider = await new ethers.BrowserProvider(window.ethereum);
+    setWallet(provider);
   }
   return (
     <div className="flex justify-items-center">
@@ -33,7 +35,9 @@ const AssetsCardCrypto = () => {
           {wallet ? (
             <h2 className="text-lg font-semibold mb-2">0 $</h2>
           ) : (
-            <Button className="w-full">Connect Wallet</Button>
+            <Button className="w-full" onClick={connectWallet}>
+              Connect Wallet
+            </Button>
           )}
         </CardContent>
 
