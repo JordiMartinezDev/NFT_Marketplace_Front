@@ -32,9 +32,7 @@ const AssetsCardCrypto = () => {
           const address = (await signer).getAddress();
           var tempbalance: any = await provider.getBalance(address);
           tempbalance = ethers.formatUnits(tempbalance, 18);
-
           const network = await provider.getNetwork();
-
           console.log("Network:", network.name);
           console.log("ChainId:", network.chainId);
 
